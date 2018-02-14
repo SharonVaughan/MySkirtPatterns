@@ -1,0 +1,22 @@
+<h1>Skirt Designer</h1>
+
+
+
+<div class='measurements'>
+	<%= form_for @new_skirt do |form| %>
+		<%= form.text_field :length, autofocus: true, placeholder: 'Enter the length here...' %>
+		<%= form.text_field :waist, autofocus: true, placeholder: 'Enter the waist here...' %>
+		<%= form.text_field :pleat_width, autofocus: true, placeholder: 'Enter the pleat width here...' %>
+		<%= form.text_field :waistband_width, autofocus: true, placeholder: 'Enter the waistband width here...' %>
+
+		<%= form.submit "Submit" %>
+	<% end %>
+</div>
+
+<!-- put if statement around this so it doesn't display, use flash -->
+<div class='view_skirt_measurements'>
+	<small>Length of the skirt is <strong><%= @skirt.length %>cm</strong></small><br>
+	<small>Waist circumference is <strong><%= @skirt.waist %>cm</strong></small><br>
+	<small>Each pleat is <strong><%= @skirt.pleat_width %>cm </strong></small>
+	<small>wide with a waistband of <strong><%= @skirt.waistband_width %>cm</strong></small><br>
+</div>
